@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Game Suit</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
+    </head>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <body>
+        <section id="areaJudul">
+            <h1 class="text-center mt-5 mb-5 heading1">BATU KERTAS GUNTING!</h1>
+        </section>
+        <section class="kotak" id="areaGambar">
+            <div class="card float-start text-center ms-5" style="width: 23rem">
+                <img id="gambarPlayer" src="img/kertas-kanan.jpg" class="card-img-top kiri rounded kotakShow text-center" alt="player" />
+                <div class="card-body">
+                    <h5 class="card-title nama mb-3">KAMU</h5>
+                    <p class="card-text">
+                        <div class="input-group">
+                            <select class="form-select" id="pilihan" aria-label="Example select with button addon">
+                              <option value="batu" id="bat">Batu</option>
+                              <option value="kertas" id="kert">Kertas</option>
+                              <option value="gunting" id="gunt">Gunting</option>
+                            </select>
+                            <button class="btn btn-outline-secondary" type="button" id="buttonPilih">PILIH!</button>
+                        </div>
+                        <p class="mt-3">terpilih: <span id="showPilihan">belum ada</span></p>
+                    </p>
+                </div>
+            </div>
+            <div class="card float-end text-center me-5" style="width: 23rem">
+                <img id="gambarAi" src="img/batu-kiri.jpg" class="card-img-top kanan rounded kotakShow text-center" alt="comp" />
+                <div class="card-body">
+                    <h5 class="card-title nama mb-3">A.I COMP</h5>
+                    <p class="card-text">A.I Memilih: <span id="showPilihanAi">Belum ada</span></p>
+                </div>
+            </div>
+            <!-- <div class="kiri rounded float-start kotakShow text-center">KAMU</div>
+            <div class="kanan rounded float-end kotakShow text-center">A.I</div> -->
+        </section>
+        <section id="areaInfo">
+            <p class="text-center mb-5">Ronde: <span id="jumlahRonde">0</span></p>
+            <div class="card yaudah" style="width: 30rem;">
+                <ul class="list-group list-group-flush deskripsi">
+                  <li class="list-group-item borderBawah mb-3"><span class="text-start" id="skorPlayer">0</span class="text-center">   [SKOR]   <span class="text-end" id="skorAi">0</span></li>
+                  <li class="list-group-item">
+                      <span id="showKamu">Kamu</span>
+                      MELAWAN
+                      <span id="showAi">A.I</span>
+                  </li>
+                  <li class="list-group-item borderAtas" >Hasil: <span id="hasil">-</span></li>
+                </ul>
+              </div>
+            <button type="button" class="btn btn-outline-danger yaudah mt-5" id="fight">FIGHT!</button>
+        </section>
+        <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script> -->
+        <script src="script.js"></script>
+    </body>
+</html>

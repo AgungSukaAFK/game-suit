@@ -1,0 +1,49 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+html {
+    min-width: 1200px;
+    overflow: auto;
+}
+
+body {
+    background-color: #ffea00;
+    font-family: "Press Start 2P", cursive;
+}
+
+.heading1 {
+    font-size: 30px;
+}
+
+.kotakShow {
+    margin: auto;
+    width: 200px;
+    height: 200px;
+    border: 4px dashed white;
+}
+
+.nama {
+    text-decoration: underline;
+}
+
+.card {
+    background-color: #ffea00;
+    border: none;
+    text-align: center;
+}
+
+.margin-auto {
+    margin: 0 auto;
+}
+
+.yaudah {
+    display: block;
+    margin: auto;
+}
+
+.deskripsi li {
+    background-color: #ffea00;
+}
+
+/* #areaInfo {
+    background-color: black;
+} */
