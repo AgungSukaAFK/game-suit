@@ -1,5 +1,6 @@
 # GAME SUIT by AgungSukaAFK
-https://user-images.githubusercontent.com/84656505/171426280-d2609fa7-f173-4e90-9eb8-9dc4f1b10446.PNG
+![GAME](https://user-images.githubusercontent.com/84656505/171426905-a59222fa-8403-45b2-bec0-9bd42443983c.PNG)
+
 
 Halo, yang kamu baca ini adalah file README.md dari repositori game-suit yang berisi source code dari game ini.
 Ya, game ini bersifat open-source. 
