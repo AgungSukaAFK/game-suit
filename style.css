@@ -68,3 +68,19 @@ body {
     text-align: center;
     color: white;
 }
+
+.apdet {
+    display: inline-block;
+    color: white;
+    margin: auto;
+    text-align: center;
+    font-size: 15px;
+}
+
+.divLink {
+    margin-top: 15px;
+    text-align: center;
+    width: auto;
+    height: auto;
+    margin: auto;
+}
