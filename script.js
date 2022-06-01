@@ -58,13 +58,11 @@ const gambarAi = document.getElementById("gambarAi");
 
 let jumlahRonde = document.getElementById("jumlahRonde");
 
-let ronde = 0;
-
 fight.onclick = fightHard;
 
 function aiMilih() {
     if (document.getElementById("showKamu").innerHTML == "Kamu") {
-        alert("Silahkan pilih opsi suit-nya dulu, baru pencet fight... gimana sih lu, gak liat atau apa? tinggal mencet aja susah.");
+        alert("Silahkan pilih opsi suit-nya dulu untuk bisa memulai permainan :)");
     } else {
         let angkaAcak = Math.random();
         let pilihanAi;
@@ -80,7 +78,6 @@ function aiMilih() {
         }
 
         showPilihanAi.innerHTML = pilihanAi;
-        ronde++;
         jumlahRonde.innerHTML = ronde;
 
         document.getElementById("showAi").innerHTML = pilihanAi;
@@ -146,9 +143,72 @@ function gameLogic() {
     skorRealAi.innerHTML = skorAi;
 }
 
+// UPDATE 0.3
+/* 
+    !-- Game Suit v0.3 by AgungSukaAFK --!
+    Update kali ini menyertakan:
+    - Perbaikan bug
+    - Optimisasi program
+    - Pembaruan efisiensi logika game
+    - Fitur baru "Kustom Nama"
+    - Fitur baru "Kustom Ronde"
+    - Fitur baru "Pop-up hasil pertandingan"
+    - dll..
+*/
+
+const inputJumlahRonde = document.getElementById("inputJumlahRonde");
+let rondeKustom = 0;
+
+const showMaxRonde = document.getElementById("showMaxRonde");
+let maxRonde = 10;
+showMaxRonde.textContent = maxRonde;
+
+const tombolRonde = document.getElementById("simpanRonde");
+tombolRonde.addEventListener("click", function () {
+    // alert(inputJumlahRonde.value);
+    if (isNaN(inputJumlahRonde.value)) {
+        alert("Kustom ronde harus berupa angka, MAX: 999 | MIN: 5");
+    } else if (inputJumlahRonde.value == "") {
+        alert("Inputnya jangan kosong lah...");
+    } else {
+        maxRonde = parseInt(inputJumlahRonde.value);
+        showMaxRonde.textContent = maxRonde;
+    }
+});
+
+let ronde = 0;
+
 function fightHard() {
-    aiMilih();
-    gameLogic();
+    if (ronde < maxRonde) {
+        ronde++;
+        aiMilih();
+        gameLogic();
+    } else {
+        let winner = "";
+        if (skorKamu > skorAi) {
+            winner = `${namaPlayer.textContent} MENANG!`;
+        } else if (skorKamu == skorAi) {
+            winner = "DRAW";
+        } else {
+            winner = `${namaPlayer.textContent} KALAH... :(`;
+        }
+
+        alert(`Max ronde tercapai, Hasil: ${winner}`);
+    }
 }
 
 // AKHIR - LOGIKA GAME
+
+const namaPlayer = document.getElementById("namaPlayer");
+
+let inputNamaKustom = document.getElementById("inputKustomNama");
+
+const tombolNama = document.getElementById("simpanNama");
+tombolNama.addEventListener("click", function () {
+    if (inputNamaKustom.value == "") {
+        alert("Nama kustom Maksimal 13 karakter, dan tidak boleh kosong!");
+    } else {
+        let namaKustom = inputNamaKustom.value;
+        namaPlayer.textContent = namaKustom;
+    }
+});
